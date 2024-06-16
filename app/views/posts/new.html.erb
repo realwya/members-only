@@ -1,8 +1,8 @@
 <h1>New Post</h1>
 
-<%= form_with model: @post do |post| %>
+<%= form_with model: @post do |form| %>
   <div>
-    <%= form.lable :title %><br>
+    <%= form.label :title %><br>
     <%= form.text_field :title%>
     <% @post.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
@@ -21,3 +21,5 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+<%= link_to 'Back', posts_path %>

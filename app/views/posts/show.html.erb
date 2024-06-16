@@ -1,4 +1,8 @@
 <h1><%= @post.title %></h1>
-<p>Posted by: <%= @post.user_id %></p>
+<% if user_signed_in? %>
+  <p> by: <%= @post.user.username %></p>
+<% end %>
 
 <p><%= @post.body %></p>
+
+<%= link_to 'Back', posts_path %>
